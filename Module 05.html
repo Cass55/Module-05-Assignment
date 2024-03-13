@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>JavaScript Assignment 5</title>
+	<script>
+
+function changeBackground(color) {
+  document.body.style.background = color;
+}
+window.addEventListener("load",function() { changeBackground('blue') });
+</script>
+</head>
+<body>
+	<script>
+// Define myDog object using an object literal
+let myDog = {
+	name: "Courage",
+	breed: "Beagle",
+	species: "Dog",
+	gender: "Male",
+	occupation: "Pet",
+	characterType: "family dog in the cartoon about an elderly married couple who live in the middle of nowhere",
+	TVShow: "Courage the Cowardly Dog",
+	mySound: "You might not be scared, but you should be!" //Additional property for personality
+	};
+	// Method to display information about the dog
+		alert("Hello, my name is " + myDog.name +", "+ "when I bark "+ myDog.mySound + " I starred in the TV Show " + myDog.TVShow + ". " + "My character was a " 
+		+ myDog.breed + " " + myDog.species + ". " + "I was the " + myDog.characterType + ". " + "I was their " + myDog.occupation + ". ");
+	
+	// Display the dog's information
+	function Dog(name, TVShow, breed, characterType, mySound, species, gender, occupation) {
+	this.name = name;
+	this.TVShow = TVShow;
+	this.breed = breed;
+	this.characterType = characterType;
+	this.mySound = mySound;
+	this.species = species;
+	this.gender = gender;
+	this.occupation = occupation;
+	this.canTalk = true; //Adding property named canTalk
+	// Adding a method named myGreeting
+	this.myGreeting = function() {
+	let soundDescription = this.canTalk ? "I am able to speak to the viewers, but not my owners. " : "I usually act out the message I want to tell my owners.";
+	return (
+	"Hello, my name is " + this.name +", when I bark " + soundDescription + "I starred in the TV Show " + myDog.TVShow + ". " + "My character was a " 
+		+ myDog.breed + " " + myDog.species + ". " + "I was the " + myDog.characterType + ". " + "I was their " + myDog.occupation + ". ");
+		};
+	}
+	
+	// Create a new dog object using the constructor
+	let myDogConst = new Dog("Courage", "Courage the Cowardly Dog", "Beagle",  
+	"family dog in the cartoon about a family in the middle of nowhere", "you might not be scared, but you should be!", "Dog", "Male", "Pet", "I can talk", true);
+	// Call the object's method to display the myGreeting message
+	document.write(myDogConst.myGreeting());
+	</script>
+</body>
+</html>
